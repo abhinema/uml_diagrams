@@ -1,0 +1,31 @@
+@startuml alternative 
+
+autonumber
+'autoactivate on
+
+skinparam sequenceMessageAlign center
+skinparam ResponseMessageBelowArrow true
+
+header 1Q1D
+footer %page%/%lastpage%
+title Alternative
+
+participant Module1 as M1 #LightBlue 
+participant Module2 as M2 #LightCoral 
+
+M1 -> M2: Authentication Request
+
+alt Auth == SUCCESS
+    M2-->M1: SUCCESS
+else Auth != SUCCESS
+    M2-->M1: Failure
+    group Error Recovery(Group)
+    M1->M2: Error Revovery Start
+    loop 1000 times (Loop)
+        M1-->M2: Error Recovery Tryout
+    end
+    M1->M2: Deinit()
+    end
+end    
+@enduml
+

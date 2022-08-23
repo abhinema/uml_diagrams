@@ -1,0 +1,17 @@
+@startuml lifeline
+
+autonumber
+autoactivate on
+
+skinparam sequenceMessageAlign center
+skinparam ResponseMessageBelowArrow true
+
+header 1Q1D
+footer %page%/%lastpage%
+title Lifeline
+
+participant Module1 as M1 #LightBlue 
+... ...
+
+@enduml
+

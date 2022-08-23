@@ -1,0 +1,21 @@
+@startuml activation 
+autonumber
+'autoactivate on
+
+skinparam sequenceMessageAlign center
+'skinparam ResponseMessageBelowArrow true
+
+header 1Q1D
+footer %page%/%lastpage%
+title Activate
+
+participant Module1 as M1 #LightBlue 
+participant Module2 as M2 #LightCoral 
+
+activate M2 #Aquamarine
+M1 -> M2: Authentication Request
+return: Response
+
+
+@enduml
+
